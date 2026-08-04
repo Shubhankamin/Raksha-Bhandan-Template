@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Raksha Bandhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+     GLOBAL CINEMATIC TRANSITION
+============================================================= -->
+
+    <div id="transitionOverlay">
+      <div class="transitionGlow"></div>
+    </div>
+    <nav id="thread-nav" aria-label="Scene progress"></nav>
+
+    <div id="scenes">
+      <!-- ============================================================
+     SCENE 1 — CINEMATIC INTRO
+============================================================= -->
+      <section class="scene" id="scene-loading" data-scene="0">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+
+        <div id="floatingParticles"></div>
+
+        <div class="lights" id="lights"></div>
+
+        <div class="scene-inner">
+          <div class="diya-wrapper">
+            <div class="diya-glow"></div>
+
+            <div class="diya">
+              <div class="diya-bowl"></div>
+
+              <div class="flame-wrapper">
+                <div class="spark"></div>
+                <div class="flame"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title-group">
+            <div class="eyebrow">A Bond Beyond Distance</div>
+
+            <h1 class="main-title">
+              <span class="word">Happy</span>
+              <span class="word">Raksha Bandhan</span>
+            </h1>
+
+            <div class="sub-title">
+              Some threads are woven with love, and never break.
+            </div>
+          </div>
+
+          <div class="intro-loader">
+            <div class="loading-message" id="loadingMessage">
+              Lighting a diya...
+            </div>
+
+            <div class="thread-loader">
+              <div class="loader-track">
+                <div class="thread-progress"></div>
+                <div class="thread-bead"></div>
+              </div>
+            </div>
+
+            <button
+              class="next-btn"
+              id="loading-next"
+              data-goto="1"
+              aria-label="Begin the journey"
+            >
+              Begin the Journey <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCENE 2 — THE GIFT OF LOVE
+============================================================= -->
+      <section class="scene" id="scene-gift" data-scene="1">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+        <div class="floating-particles" id="giftParticles"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">A Surprise Awaits You</div>
+
+          <h2 class="gift-title reveal">
+            <span>Someone special</span><br />
+            has sent you a gift.
+          </h2>
+
+          <p class="gift-subtitle reveal">
+            Every thread carries a promise. Every gift carries a memory.
+          </p>
+
+          <div class="gift-stage">
+            <div class="gift-light"></div>
+            <div class="gift-sparkles"></div>
+
+            <div
+              class="gift-wrap"
+              id="giftWrap"
+              role="button"
+              tabindex="0"
+              aria-label="Open your gift"
+            >
+              <div class="gift-shadow"></div>
+              <div class="gift-glow"></div>
+              <div class="gift-base"></div>
+              <div class="ribbon-v"></div>
+              <div class="ribbon-h"></div>
+              <div class="gift-lid"></div>
+              <div class="bow"></div>
+              <div class="gift-rays"></div>
+
+              <div class="rakhi-container">
+                <svg class="rakhi-peek" viewBox="0 0 70 30">
+                  <rect x="0" y="13" width="70" height="4" fill="#7a5230" />
+                  <circle
+                    cx="35"
+                    cy="15"
+                    r="13"
+                    fill="#c9963c"
+                    stroke="#4A0E17"
+                    stroke-width="2"
+                  />
+                  <circle cx="35" cy="15" r="5" fill="#E4C077" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="gift-message" id="giftMessage">
+            Click the gift to unwrap your surprise.
+          </div>
+
+          <button class="next-btn" id="gift-next" data-goto="2">
+            Continue <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCENE 3 — RAKHI CEREMONY
+============================================================= -->
+      <section class="scene" id="scene-rakhi" data-scene="2">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+        <div class="petals" id="petals"></div>
+        <div class="ceremony-light"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">A Sacred Bond</div>
+
+          <h2 class="ceremony-title reveal">
+            Distance may separate us,
+            <br />
+            but this thread never will.
+          </h2>
+
+          <p class="ceremony-subtitle reveal">
+            Today, let me tie this Rakhi with all my love.
+          </p>
+
+          <div class="rakhi-stage">
+            <div class="rakhi-glow"></div>
+
+            <svg class="rakhi-svg" id="rakhiFloat" viewBox="0 0 130 130">
+              <circle
+                cx="65"
+                cy="65"
+                r="46"
+                fill="none"
+                stroke="#7a5230"
+                stroke-width="3"
+                stroke-dasharray="4 6"
+              />
+              <circle
+                cx="65"
+                cy="65"
+                r="30"
+                fill="#c9963c"
+                stroke="#4A0E17"
+                stroke-width="4"
+              />
+              <circle cx="65" cy="65" r="12" fill="#E4C077" />
+            </svg>
+          </div>
+
+          <button class="ceremony-btn" id="tieBtn">Begin Ceremony</button>
+
+          <div class="ceremony-steps" id="ceremonySteps">
+            <div class="step" data-step="thread">
+              <span class="step-dot"></span>
+              <span class="step-label">Thread</span>
+            </div>
+            <div class="step" data-step="tilak">
+              <span class="step-dot"></span>
+              <span class="step-label">Tilak</span>
+            </div>
+            <div class="step" data-step="blessing">
+              <span class="step-dot"></span>
+              <span class="step-label">Blessing</span>
+            </div>
+          </div>
+
+          <div class="ceremony-stage" id="wristScene">
+            <div class="wrist-shadow"></div>
+            <div class="wrist"></div>
+
+            <svg
+              class="thread-svg"
+              id="threadBack"
+              viewBox="0 0 260 150"
+              aria-hidden="true"
+            >
+              <path class="strand" d="M60,75 C90,38 170,38 200,75" />
+            </svg>
+
+            <div class="rakhi-band" id="rakhiBand"></div>
+
+            <svg
+              class="thread-svg"
+              id="threadFront"
+              viewBox="0 0 260 150"
+              aria-hidden="true"
+            >
+              <path class="strand" d="M60,75 C90,112 170,112 200,75" />
+            </svg>
+
+            <div class="tilak-dot" id="tilakDot"></div>
+            <div class="rice-grains" id="riceGrains"></div>
+            <div class="flower-petals" id="flowerPetals"></div>
+            <div class="blessing-glow" id="blessingGlow"></div>
+          </div>
+
+          <div class="ceremony-caption" id="ceremonyCaption">
+            May happiness, success, and good health always stay with you.
+          </div>
+
+          <button class="next-btn" id="rakhi-next" data-goto="3">
+            Continue <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCENE 4 — A LETTER FROM THE HEART
+============================================================= -->
+      <section class="scene" id="scene-letter" data-scene="3">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+        <div class="paper-particles" id="paperParticles"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">A Letter From My Heart</div>
+
+          <h2 class="letter-title reveal">
+            Some words are easier to write
+            <br />
+            than to say.
+          </h2>
+
+          <p class="letter-subtitle reveal">
+            Open this letter whenever you miss home, or simply miss me.
+          </p>
+
+          <div class="letter-stage">
+            <div class="paper-shadow"></div>
+
+            <div
+              class="envelope"
+              id="envelope"
+              role="button"
+              tabindex="0"
+              aria-label="Open the Letter"
+            >
+              <div class="envelope-glow"></div>
+              <div class="seal" id="seal">RB</div>
+            </div>
+
+            <div class="hint" id="envelopeHint">Tap the seal to open</div>
+
+            <div class="letter-paper" id="letterPaper">
+              <div class="letter-content">
+                <p class="letter-line">
+                  Dear
+                  <span id="letterName"> Brother </span>,
+                </p>
+
+                <p class="letter-line">
+                  Even though we may be miles apart today, not a single day goes
+                  by without me thanking God for blessing me with a brother like
+                  you.
+                </p>
+
+                <p class="letter-line">
+                  Thank you for always protecting me, supporting me, and
+                  standing beside me through every chapter of life.
+                </p>
+
+                <p class="letter-line">
+                  This Rakhi may not reach your wrist through my hands, but I
+                  hope it reaches your heart.
+                </p>
+
+                <p class="letter-line">Happy Raksha Bandhan ❤️</p>
+
+                <div class="letter-sign">
+                  Always Yours,
+                  <span> Your Sister ♥ </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="next-btn" id="letter-next" data-goto="4">
+            Continue <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCENE 5 — MEMORY BOX
+============================================================= -->
+      <section class="scene" id="scene-memory" data-scene="4">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+        <div class="memory-particles"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">Our Memories</div>
+          <h2 class="memory-title reveal">Every picture tells a story.</h2>
+          <p class="memory-subtitle reveal">
+            Some moments fade with time... ours only become more precious.
+          </p>
+        </div>
+
+        <div class="memory-table">
+          <div class="table-shadow"></div>
+
+          <div class="memory-grid" id="memoryGrid">
+            <div
+              class="polaroid reveal-memory"
+              data-cap="Childhood Days"
+              data-desc="Two kids, endless summers, and a house that always felt loud with love."
+            >
+              <img src="images/1.jpg" class="thumb" alt="Childhood Days" />
+              <span class="cap"> Childhood Days </span>
+            </div>
+
+            <div
+              class="polaroid reveal-memory"
+              data-cap="That Trip"
+              data-desc="The trip where we got lost twice and laughed about it for years."
+            >
+              <img src="images/2.jpg" class="thumb" alt="That Trip" />
+              <span class="cap"> That Trip </span>
+            </div>
+
+            <div
+              class="polaroid reveal-memory"
+              data-cap="College Days"
+              data-desc="Different cities, same phone calls every single week."
+            >
+              <img src="images/3.jpg" class="thumb" alt="College Days" />
+              <span class="cap"> College Days </span>
+            </div>
+
+            <div
+              class="polaroid reveal-memory"
+              data-cap="Beach Day"
+              data-desc="Sunburnt shoulders and the best day of that whole summer."
+            >
+              <img src="images/4.jpg" class="thumb" alt="Beach Day" />
+              <span class="cap"> Beach Day </span>
+            </div>
+
+            <div
+              class="polaroid reveal-memory"
+              data-cap="Festival Moments"
+              data-desc="Every Raksha Bandhan before this one, all worth remembering."
+            >
+              <img src="images/5.jpg" class="thumb" alt="Festival Moments" />
+              <span class="cap"> Festival Moments </span>
+            </div>
+
+            <div
+              class="polaroid reveal-memory"
+              data-cap="Just Us"
+              data-desc="No occasion, no reason — just us being us."
+            >
+              <img src="images/6.jpg" class="thumb" alt="Just Us" />
+              <span class="cap"> Just Us </span>
+            </div>
+          </div>
+
+          <button class="next-btn show" id="memory-next" data-goto="5">
+            Continue <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     MEMORY VIEWER
+============================================================= -->
+      <div class="memory-viewer" id="lightbox">
+        <div class="memory-backdrop"></div>
+
+        <div class="memory-card">
+          <div class="memory-photo">
+            <img id="lightboxImage" src="" alt="" />
+          </div>
+
+          <div class="memory-details">
+            <h3 id="lbCap">Childhood Days</h3>
+            <p id="memoryDescription">A memory we'll always cherish.</p>
+          </div>
+
+          <button class="memory-close" id="lbClose">Close</button>
+        </div>
+      </div>
+
+      <!-- ============================================================
+     SCENE 6 — ONE LAST SURPRISE
+============================================================= -->
+      <section class="scene" id="scene-voice" data-scene="5">
+        <div class="scene-bg"></div>
+        <div class="scene-overlay"></div>
+        <div class="floating-dust"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">One Last Surprise</div>
+
+          <h2 class="voice-title reveal">
+            Before you go...
+            <br />
+            there's something I want you to hear.
+          </h2>
+
+          <p class="voice-subtitle reveal">
+            Sometimes a voice says more than words ever can.
+          </p>
+
+          <div class="cassette-stage">
+            <div class="desk-shadow"></div>
+            <div class="cassette-glow"></div>
+
+            <div class="cassette">
+              <div class="reel l" id="reelL"></div>
+              <div class="reel r" id="reelR"></div>
+              <div class="cassette-label">From Your Sister ❤️</div>
+            </div>
+          </div>
+
+          <div class="player">
+            <button
+              class="play-btn"
+              id="playBtn"
+              aria-label="Play Voice Message"
+            >
+              ▶
+            </button>
+
+            <div class="wave" id="wave"></div>
+
+            <div class="time-row">
+              <span id="tCur"> 0:00 </span>
+              <span id="tTotal"> 0:28 </span>
+            </div>
+          </div>
+
+          <div class="voice-status" id="voiceStatus">
+            Tap play to hear my message.
+          </div>
+
+          <!-- [EDIT: AUDIO] add a real source, e.g. <source src="audio/message.mp3" type="audio/mpeg"> -->
+          <audio id="voiceAudio" preload="none"></audio>
+
+          <button class="next-btn show" id="voice-next" data-goto="6">
+            Continue <span class="arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================
+     SCENE 7 — UNTIL WE MEET AGAIN
+============================================================= -->
+      <section class="scene" id="scene-final" data-scene="6">
+        <div class="scene-bg night"></div>
+        <div class="scene-overlay"></div>
+        <div class="moon"></div>
+        <div class="stars" id="stars"></div>
+        <div class="fireflies" id="fireflies"></div>
+        <div id="lanterns"></div>
+
+        <div class="scene-inner">
+          <div class="eyebrow reveal">Until We Meet Again</div>
+
+          <div class="final-stage">
+            <div class="rakhi-aura"></div>
+
+            <svg class="final-rakhi" viewBox="0 0 110 110">
+              <circle
+                cx="55"
+                cy="55"
+                r="50"
+                fill="none"
+                stroke="#C9963C"
+                stroke-width="2"
+                stroke-dasharray="3 5"
+              />
+              <circle
+                cx="55"
+                cy="55"
+                r="34"
+                fill="#c9963c"
+                stroke="#4A0E17"
+                stroke-width="4"
+              />
+              <circle cx="55" cy="55" r="14" fill="#E4C077" />
+            </svg>
+          </div>
+
+          <div class="final-quote">
+            No matter how many miles separate us...
+            <br /><br />
+            This thread will always find its way back to you.
+          </div>
+
+          <h1 class="final-title">Happy Raksha Bandhan ❤️</h1>
+
+          <p class="final-message">
+            Thank you for being my first friend, my biggest supporter, and my
+            forever brother.
+          </p>
+
+          <div class="final-sign">
+            With all my love,
+            <br />
+            Your Sister ♥
+          </div>
+
+          <button class="restart-btn" id="restartBtn">
+            Relive This Journey ↻
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
